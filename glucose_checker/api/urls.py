@@ -14,7 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import include, path
+from rest_framework import routers
+
+from glucose_checker.api.views import GlucoseReadingViewSet
+
+router = routers.DefaultRouter()
+
+router.register("v1/levels", GlucoseReadingViewSet)
 
 urlpatterns = [
-    path('api/', include("glucose_checker.api.urls")),
+    path('', include(router.urls)),
 ]

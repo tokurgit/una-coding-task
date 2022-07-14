@@ -16,7 +16,7 @@ class GlucoseReading(models.Model):
         FIVE = 5
         SIX = 6
 
-    user_id = models.CharField(max_length=64, primary_key=True)
+    user_id = models.CharField(max_length=64)
     device = models.CharField(
         max_length=128,
         help_text="Device used to make the glucose reading",
